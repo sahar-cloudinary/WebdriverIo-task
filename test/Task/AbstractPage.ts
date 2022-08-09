@@ -8,4 +8,9 @@ export default class AbstractPage{
     public getImg(img:string){
        return $(img).click({ button: 'right' })
     }
+    public async switchToFrame(){
+        await $('//iframe[@data-test="uw-iframe"]').waitForDisplayed()
+        browser.switchToFrame($('//iframe[@data-test="uw-iframe"]'))
+        
+    }
 }

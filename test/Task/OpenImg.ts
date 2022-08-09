@@ -1,4 +1,6 @@
-class OpenImg{
+import AbstractPage from "./AbstractPage"
+
+class OpenImg extends AbstractPage{
     public get titleOfImg(){
         return $('[data-test="item-title"]')
     }
