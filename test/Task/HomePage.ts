@@ -1,11 +1,11 @@
 import AbstractPage from "./AbstractPage";
 
+const MEDIA_LIBRARY_BUTTON='[data-balloon="Media Library"]';
 class HomePage extends AbstractPage{
-    public get mediaLibraryButton(){
-        return $('[data-balloon="Media Library"]')
-    }
+
     public async clickOnmediaLibraryButton(){
-        await this.mediaLibraryButton.click()
+        await $(MEDIA_LIBRARY_BUTTON).waitForDisplayed();
+        await $(MEDIA_LIBRARY_BUTTON).click();
     }
 
 }

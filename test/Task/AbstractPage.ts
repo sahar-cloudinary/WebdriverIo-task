@@ -1,4 +1,5 @@
 export default class AbstractPage{
+    private IFRAME_SELECTOR='//iframe[@data-test="uw-iframe"]'
     public async visit(Url:string){
         await browser.url(Url)
     }
@@ -9,8 +10,8 @@ export default class AbstractPage{
        return $(img).click({ button: 'right' })
     }
     public async switchToFrame(){
-        await $('//iframe[@data-test="uw-iframe"]').waitForDisplayed()
-        browser.switchToFrame($('//iframe[@data-test="uw-iframe"]'))
-        
+        await $(this.IFRAME_SELECTOR).waitForDisplayed()
+        browser.switchToFrame(await $(this.IFRAME_SELECTOR));
+
     }
 }

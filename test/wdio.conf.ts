@@ -23,7 +23,7 @@ export const config: Options.Testrunner = {
     // If you need to configure how ts-node runs please use the
     // environment variables for ts-node or use wdio config's autoCompileOpts section.
     //
-    
+
     autoCompileOpts: {
         autoCompile: true,
         // see https://github.com/TypeStrong/ts-node#cli-and-programmatic-options
@@ -84,7 +84,7 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -104,7 +104,7 @@ export const config: Options.Testrunner = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -145,7 +145,7 @@ export const config: Options.Testrunner = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -210,7 +210,7 @@ export const config: Options.Testrunner = {
             });
             reportAggregator.clean();
     },
- 
+
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -346,5 +346,5 @@ export const config: Options.Testrunner = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
-    
+
 }

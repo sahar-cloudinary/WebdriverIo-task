@@ -5,6 +5,8 @@ class MediaLibrary extends AbstractPage{
      return $('[data-test="upload-btn"]')
     }
     public async clickUploadButton(){
+        await browser.pause(3000);
+        await this.UploadButton.waitForClickable();
         await this.UploadButton.click()
     }
 }
