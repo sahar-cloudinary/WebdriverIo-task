@@ -2,13 +2,14 @@ import AbstractPage from "./AbstractPage";
 
 class uploadPager extends AbstractPage{
     public get AdvancedButton(){
-        return $('Element inside cross-origin iframe. Copy Selectors by right click on element or open iframe src url in new tab.')
+        return $('[data-test="btn-advanced"]')
     }
     public get publicIdInput(){
         return $('[data-test="public-id"]')
     }
 
     public async AdvanceAndupload(Text:string){
+        await this.AdvancedButton.waitForClickable()
         await this.AdvancedButton.click()
         await this.publicIdInput.setValue(Text)
     }
